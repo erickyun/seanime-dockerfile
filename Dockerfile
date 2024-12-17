@@ -20,4 +20,5 @@ VOLUME ["/downloads", "/root/.config/Seanime"]
 # DEVICE ["/dev/dri/card0", "/dev/dri/renderD128"]
 
 # Run the default entrypoint
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
+CMD [""]
