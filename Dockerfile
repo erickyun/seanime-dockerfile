@@ -21,5 +21,5 @@ VOLUME ["/downloads", "/root/.config/Seanime"]
 
 # Run the default entrypoint
 #CMD ["/bin/bash"]
-chmod +x /run sh
+RUN chmod +x /run sh
 CMD ["/run.sh"]
