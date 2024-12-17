@@ -42,5 +42,7 @@ EXPOSE 43211 8080 6881 6881/udp
 
 COPY . .
 
+RUN pwd
+
 #CMD ["./seanime"]
-CMD ["./seanime", "--datadir", "/config/Seanime"]
+CMD ["./seanime", "--datadir", "/app/config/Seanime"]
