@@ -38,5 +38,5 @@ ENV PATH="/usr/lib/jellyfin-ffmpeg/:$PATH"
 
 EXPOSE 43211 8080 6881 6881/udp
 
-#CMD ["./seanime"]
-CMD ["./seanime", "-b", "0.0.0.0"]
+CMD ["./seanime"]
+#CMD ["./seanime", "-b", "0.0.0.0"]
