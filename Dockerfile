@@ -1,4 +1,4 @@
-# Base image
+# Use the base image
 FROM valgul/seanime:latest
 
 # Set environment variables (if needed)
@@ -14,12 +14,11 @@ EXPOSE 43211
 # Set default volumes
 VOLUME ["/downloads", "/root/.config/Seanime"]
 
-# Uncomment the following lines for Intel GPU support (optional)
-# RUN apt-get update && apt-get install -y intel-media-va-driver
-# VOLUME ["/usr/lib/x86_64-linux-gnu/dri/"]
-# DEVICE ["/dev/dri/card0", "/dev/dri/renderD128"]
+# Create the run.sh script
+RUN echo '#!/bin/bash\n\ndocker run -it -p 43211:43211 -p 8080:8080 -p 6881:6881 -p 6881:6881/udp --restart=always --name seanime valgul/seanime' > /run.sh
 
-# Run the default entrypoint
-#CMD ["/bin/bash"]
+# Make the script executable
 RUN chmod +x /run.sh
+
+# Set the default command to execute the script
 CMD ["/run.sh"]
