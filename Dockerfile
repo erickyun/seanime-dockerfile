@@ -21,4 +21,8 @@ RUN echo '#!/bin/bash\n\ndocker run -it -p 43211:43211 -p 8080:8080 -p 6881:6881
 RUN chmod +x /run.sh
 
 # Set the default command to execute the script
-CMD ["/run.sh"]
+#CMD ["/run.sh"]
+
+# Run Docker in privileged mode
+CMD ["bash", "-c", "docker run --privileged -it -p 43211:43211 -p 8080:8080 -p 6881:6881 -p 6881:6881/udp --restart=always --name seanime valgul/seanime"]
+
