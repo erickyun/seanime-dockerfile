@@ -36,26 +36,10 @@ RUN LATEST_VERSION=$(curl -s https://api.github.com/repos/5rahim/seanime/release
 
 ENV PATH="/usr/lib/jellyfin-ffmpeg/:$PATH"
 
-###EXPOSE 80 443 43211 43213 43214 8080 6881 6881/udp
-# HTTP traffic
-EXPOSE 80
-# HTTPS traffic
-EXPOSE 443
-# Custom application ports
-EXPOSE 43211
-EXPOSE 43213
-EXPOSE 43214
-# Additional ports
-EXPOSE 8080
-EXPOSE 6881
-EXPOSE 6881/udp
-EXPOSE 10000
-
-#VOLUME ["/config"]
+EXPOSE 80 443 43211 43213 43214 8080 6881 6881/udp 10000
 
 COPY . .
 
 RUN pwd
 
-#CMD ["./seanime"]
 CMD ["./seanime", "--datadir", "/app/config/Seanime"]
