@@ -36,7 +36,7 @@ RUN LATEST_VERSION=$(curl -s https://api.github.com/repos/5rahim/seanime/release
 
 ENV PATH="/usr/lib/jellyfin-ffmpeg/:$PATH"
 
-EXPOSE 43211 8080 6881 6881/udp
+EXPOSE 43211 43213 43214 8080 6881 6881/udp
 
 #VOLUME ["/config"]
 
