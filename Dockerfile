@@ -43,11 +43,6 @@ COPY . .
 
 RUN pwd
 
-
-# Ensure Nginx logs go to stdout/stderr
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log
-
 # Start Nginx and Seanime
 CMD ["nginx", "-c", "/app/nginx.conf" && "./seanime", "--datadir", "/app/config/Seanime"]
 #CMD ["./seanime", "--datadir", "/app/config/Seanime"]
