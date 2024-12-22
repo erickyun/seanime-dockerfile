@@ -8,7 +8,8 @@ RUN apt-get update && \
         gnupg \
         wget \
         tar \
-        jq && \
+        jq \
+        nginx && \  # Install Nginx
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -42,4 +43,11 @@ COPY . .
 
 RUN pwd
 
-CMD ["./seanime", "--datadir", "/app/config/Seanime"]
+
+# Ensure Nginx logs go to stdout/stderr
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
+# Start Nginx and Seanime
+CMD ["sh", "-c", "nginx && ./seanime --datadir /app/config/Seanime"]
+#CMD ["./seanime", "--datadir", "/app/config/Seanime"]
