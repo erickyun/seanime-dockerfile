@@ -8,8 +8,7 @@ RUN apt-get update && \
         gnupg \
         wget \
         tar \
-        jq \
-        nginx-full && \
+        jq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -43,6 +42,5 @@ COPY . .
 
 RUN pwd
 
-# Start Nginx and Seanime
-CMD ["sh", "-c", "nginx -c /app/nginx.conf && ./seanime --datadir /app/config/Seanime"]
-#CMD ["./seanime", "--datadir", "/app/config/Seanime"]
+# Start Seanime
+CMD ["./seanime", "--datadir", "/app/config/Seanime"]
