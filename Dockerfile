@@ -9,7 +9,7 @@ RUN apt-get update && \
         wget \
         tar \
         jq \
-        nginx && \  # Install Nginx
+        nginx && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
