@@ -44,5 +44,5 @@ COPY . .
 RUN pwd
 
 # Start Nginx and Seanime
-CMD ["nginx", "-c", "/app/nginx.conf" && "./seanime", "--datadir", "/app/config/Seanime"]
+CMD ["sh", "-c", "nginx -c /app/nginx.conf && ./seanime --datadir /app/config/Seanime"]
 #CMD ["./seanime", "--datadir", "/app/config/Seanime"]
