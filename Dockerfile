@@ -36,7 +36,15 @@ RUN LATEST_VERSION=$(curl -s https://api.github.com/repos/5rahim/seanime/release
 
 ENV PATH="/usr/lib/jellyfin-ffmpeg/:$PATH"
 
-EXPOSE 43211 43213 43214 8080 6881 6881/udp
+EXPOSE 80 443 43211 43213 43214 8080 6881 6881/udp
+EXPOSE 80       # HTTP traffic
+EXPOSE 443      # HTTPS traffic
+EXPOSE 43211    # Custom application port
+EXPOSE 43213    # Custom application port
+EXPOSE 43214    # Custom application port
+EXPOSE 8080     # Web traffic or API
+EXPOSE 6881     # Peer-to-peer traffic (TCP)
+EXPOSE 6881/udp # Peer-to-peer traffic (UDP)
 
 #VOLUME ["/config"]
 
