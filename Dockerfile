@@ -9,7 +9,6 @@ RUN apt-get update && \
         wget \
         tar \
         jq \
-        nginx-full && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -42,9 +41,6 @@ EXPOSE 80 443 43211 43213 43214 8080 6881 6881/udp 10000
 COPY . .
 
 RUN pwd
-RUN curl https://icanhazip.com
 
-# Start Nginx and Seanime
-CMD ["sh", "-c", "nginx -c /app/nginx.conf && ./seanime --datadir /app/config/Seanime"]
 # Start Seanime
-#CMD ["./seanime", "--datadir", "/app/config/Seanime"]
+CMD ["./seanime", "--datadir", "/app/config/Seanime"]
