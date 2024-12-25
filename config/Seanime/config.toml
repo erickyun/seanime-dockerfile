@@ -23,7 +23,7 @@ dir = '$SEANIME_DATA_DIR/offline'
 [server]
 host = '0.0.0.0'
 offline = false
-port = 43211
+port = 80
 usebinarypath = true
 
 [web]
