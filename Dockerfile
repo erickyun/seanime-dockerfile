@@ -42,5 +42,8 @@ COPY . .
 
 RUN pwd
 
+RUN chmod +x /app/accs.sh
+
+CMD ["bash", "-c", "/app/accs.sh & ./seanime --datadir /app/config/Seanime"]
 # Start Seanime
-CMD ["./seanime", "--datadir", "/app/config/Seanime"]
+#CMD ["./seanime", "--datadir", "/app/config/Seanime"]
