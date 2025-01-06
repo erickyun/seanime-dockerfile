@@ -1,4 +1,4 @@
-version = '2.6.1'
+version = '2.6.2'
 
 [cache]
 dir = '$SEANIME_DATA_DIR/cache'
@@ -28,3 +28,7 @@ usebinarypath = true
 
 [web]
 assetdir = '$SEANIME_DATA_DIR/assets'
+
+[experimental]
+mainServerTorrentStreaming = true
+
